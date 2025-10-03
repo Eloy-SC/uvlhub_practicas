@@ -39,7 +39,10 @@ jobs:
         pip install flake8 flake8-pyproject black isort
 
     - name: Check Python 3.10 code compatibility
-        run: flake8 app rosemary core
+      run: |
+        flake8 app rosemary core
+        black --check app rosemary core
+        isort --check-only app rosemary core
 
     - name: Check outdated dependencies 3.10
       run: |
@@ -62,7 +65,10 @@ jobs:
         pip install flake8 flake8-pyproject black isort
 
     - name: Check Python 3.11 code compatibility
-        run: flake8 app rosemary core
+      run: |
+        flake8 app rosemary core
+        black --check app rosemary core
+        isort --check-only app rosemary core
 
     - name: Check outdated dependencies 3.11
       run: |
@@ -85,7 +91,10 @@ jobs:
         pip install flake8 flake8-pyproject black isort
 
     - name: Check Python 3.12 code compatibility
-        run: flake8 app rosemary core
+      run: |
+        flake8 app rosemary core
+        black --check app rosemary core
+        isort --check-only app rosemary core
 
     - name: Check outdated dependencies 3.12
       run: |
